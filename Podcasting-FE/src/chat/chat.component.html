@@ -1,0 +1,23 @@
+<div class="chat-wrapper" *ngIf="this.user">
+    <h1 class="text-center">Podcast Fan Chat</h1>
+    <div class="chat">
+        <div *ngFor="let message of messages" class="message">
+            <div *ngIf="username === message.user" class="me">
+                <div class="content">
+                    <p class="head">{{message.user}} ({{message.time}})</p>
+                    <p class="body">{{message.text}}</p>
+                </div>
+            </div>
+            <div *ngIf="username != message.user" class="other">
+                <div class="content">
+                    <p class="head">{{message.user}} ({{message.time}})</p>
+                    <p class="body">{{message.text}}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="chat-input">
+        <input [(ngModel)]="message" />
+        <button (click)="sendMessage()">Send</button>
+    </div>
+</div>

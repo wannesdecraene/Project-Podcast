@@ -1,0 +1,18 @@
+<div class="container">
+        <h1>Sign In</h1>
+        <form (ngSubmit)="onSubmit()" #signInForm="ngForm">
+                <p-message class="ui-g-offset-2 ui-g-9" *ngIf="this.error" severity="error" text="User already exists"></p-message>
+                <div class="form-group ui-g-12">
+                    <label class="ui-g-2 bold" for="Name">Username: </label>
+                    <input type="text" id="texr" pInputText class="form-control input ui-g-9" required [(ngModel)]="user.username" name="username">
+                </div>
+                <div class="form-group ui-g-12">
+                    <label class="ui-g-2 bold" for="SubscriptionId">Password: </label>
+                    <input type="password" id="texr" pInputText class="form-control input ui-g-9" required [(ngModel)]="user.password" name="pass">
+                </div>
+                <div class="ui-g-12">
+                    <a class="ui-g-offset-2" href="/login">Already have an account? Log In.</a>
+                </div>
+                <button pButton type="submit" class="ui-button-primary ui-g-offset-2" icon="fa-sign-in" label="Sign in" [disabled]="!signInForm.form.valid"></button>
+            </form>
+    </div>

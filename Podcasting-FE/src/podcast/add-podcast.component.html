@@ -1,0 +1,24 @@
+<div class="container">
+    <h1>Add a Podcast</h1>
+    <p-panel class="ui-g-12">
+        <form (ngSubmit)="onSubmit()" #addPodcastForm="ngForm">
+            <div class="form-group ui-g-12">
+                <label class="ui-g-2 bold" for="Name">Episode Title: </label>
+                <input type="text" id="texr" pInputText class="form-control input ui-g-9" required [(ngModel)]="podcast.episode" name="episode">
+            </div>
+            <div class="form-group ui-g-12">
+                <label class="ui-g-2 bold" for="SubscriptionId">Podcast: </label>
+                <input type="text" id="texr" pInputText class="form-control input ui-g-9" required [(ngModel)]="podcast.podcast" name="podcast">
+            </div>
+            <div class="form-group ui-g-12">
+                <label class="ui-g-2 bold" for="ApplicationId">Url: </label>
+                <input type="text" id="texr" pInputText class="form-control input ui-g-9" required [(ngModel)]="podcast.url" name="url">
+            </div>
+            <div class="form-group ui-g-12">
+                <label class="ui-g-2 bold" for="ApplicationKey">Audio Link: </label>
+                <input type="text" id="texr" pInputText class="form-control input ui-g-9" required [(ngModel)]="podcast.audio" name="audio">
+            </div>
+            <button pButton type="submit" class="ui-button-primary ui-g-offset-2" icon="fa-plus" label="Add" [disabled]="!addPodcastForm.form.valid"></button>
+        </form>
+    </p-panel>
+</div>

@@ -1,0 +1,4 @@
+<p-menubar [model]="items">
+        <button *ngIf="!this.user" [routerLink]="['/login']" pButton label="Login" icon="fa-sign-in"></button>
+        <button *ngIf="this.user" (click)="logout()" pButton label="Logout" icon="fa-sign-out"></button>
+</p-menubar>

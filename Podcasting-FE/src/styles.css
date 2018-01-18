@@ -1,0 +1,127 @@
+* {
+    font-family: 'Roboto Condensed', sans-serif;
+    padding: 0;
+    margin: 0;
+    border: 0;
+    outline: 0;
+}
+.chat-wrapper {
+    width: 20%;
+    margin-top: 3%;
+    display: inline-block;
+}
+.chat {
+    display: block;
+    width: 100%;
+    height: 300px;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    background: #eee;
+  }
+.message {
+    display: flex;
+    margin: 10px 0 0 10px;
+    min-height: 30px;
+    height: auto;
+    text-align: left;
+}
+.me {
+    padding: 0 8px 0 0;
+}
+.me .content {
+    float: right;
+    width: 60%;
+}
+.other .content {
+    float: left;
+    width: 60%;
+}
+.me .content:before {
+    position: relative;
+    float: right;
+    content: '';
+    margin: 7px -8px 0 0;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 8px 0 8px 8px;
+    border-color: transparent transparent transparent #fff;
+}
+.chat .message div {
+    display: block;
+    flex: 1;
+    order: 2;
+}
+.content {
+    display: inline-block;
+    margin: 0;
+    width: auto;
+    padding: 8px 10px 8px 10px;
+    background: #fff;
+    word-wrap: break-word;
+    font-family: Monospace;
+    border-radius: 3px;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+.content:before {
+    position: relative;
+    float: left;
+    content: '';
+    margin: 7px 0 0 -8px;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 8px 8px 8px 0;
+    border-color: transparent #fff transparent transparent;
+}
+.me .head {
+    display: block;
+}
+.me .body {
+    float: right;
+    display: block;
+}
+.head {
+    font-size: 0.6em;
+    font-weight: bold;
+}
+.body {
+    font-size: 0.8em;
+}
+.chat-input {
+    height: 30px;
+}
+.chat-input input {
+    height: 100%;
+    width: 78%;
+    border: 1px solid;
+}
+.chat-input button {
+    height: 100%;
+    width: 20%;
+    border: 1px solid;
+}
+.ui-widget *{
+    box-sizing: unset;
+}
+.ui-menu {
+    margin: .5% !important;
+}
+.text-center, .col-button {
+    text-align: center;
+}
+.container {
+    width: 76%;
+    margin: .5% 1.5%;
+    float: left;
+}
+h1 {
+    margin-bottom: 10px;
+}
+.bold {
+    font-weight: bold;
+}
+.input {
+    border: 1px solid;
+    border-radius: 3px;
+}

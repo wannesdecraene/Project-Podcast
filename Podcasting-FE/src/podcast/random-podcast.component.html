@@ -1,0 +1,25 @@
+<div class="container">
+    <h1>Random Podcast</h1>
+    <p-panel class="ui-g-12" header="{{podcast?.episode}}">
+        <div class="ui-g-12">
+            <span class="ui-g-5 bold">Podcast: </span>
+            <span class="ui-g-7">{{podcast?.podcast}}</span>
+        </div>
+        <div class="ui-g-12">
+            <span class="ui-g-5 bold">Episode on the site: </span>
+            <a href="{{podcast?.url}}" class="ui-g-7">{{podcast?.episode}}</a>
+        </div>
+        <div class="ui-g-12">
+            <span class="ui-g-5 bold">Listen here: </span>
+            <audio controls class="ui-g-7">
+                <source src="tx" type="audio/ogg" />
+                <source src="{{podcast?.audio}}" type="audio/mpeg"> Your browser does not support the audio element.
+            </audio>
+        </div>
+        <div class="ui-g-12">
+            <span class="ui-g-5 bold">Votes: </span>
+            <span class="ui-g-2">{{podcast?.votes}}</span>
+            <button type="button" class="ui-button-primary" pButton label="Vote here" (click)="voteForEpisode()"></button>
+        </div>
+    </p-panel>
+</div>
