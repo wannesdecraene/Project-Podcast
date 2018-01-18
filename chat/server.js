@@ -2,30 +2,28 @@
 
 const express = require('express');
 const app = express();
-var http = require('http').Server(app);
-const io = require('socket.io')(http);
+var http = require('http').createServer(app);
+var io = require('socket.io')(http);
 const cors = require('cors');
+const bodyParser = require('body-parser')
 
 
-app.use(cors({ credentials: true, origin: 'http://localhost:4200' }));
 
+app.use(bodyParser.urlencoded({ extended: true }))
 
 io.on('connection', (socket) => {
 
-    console.log('user connected');
+    console.log('user connected')
 
-    socket.on('disconnect', function () {
+    socket.on('disconnect', () => {
         console.log('user disconnected');
     });
 
     socket.on('add-message', (sender, message, timestamp) => {
-        console.log(timestamp)
         io.emit('message', { type: 'new-message', user: sender, text: message, time: timestamp });
-        // Function above that stores the message in the database
     });
 
 });
+app.use(cors({credentials: true, origin: 'http://localhost:4200'}));
 
-app.listen((process.env.PORT || 1207), () => {
-    console.log('server listening on port 1207');
-});
+http.listen((process.env.PORT || 80), () => console.log("Listening on port 80"  ));

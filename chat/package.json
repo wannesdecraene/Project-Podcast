@@ -15,11 +15,14 @@
   },
   "dependencies": {
     "body-parser": "^1.15.2",
+    "bufferutil": "3.0.3",
     "cookie-parser": "~1.4.3",
     "cors": "^2.8.4",
     "express": "^4.16.2",
     "express-session": "~1.14.1",
-    "socket.io": "^2.0.4"
+    "socket.io": "^2.0.4",
+    "utf-8-validate": "4.0.0",
+    "ws": "4.0.0"
   },
   "devDependencies": {
     "chai": "^3.2.0",

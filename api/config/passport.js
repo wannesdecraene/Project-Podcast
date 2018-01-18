@@ -2,21 +2,21 @@ const LocalStrategy   = require('passport-local').Strategy;
 const User            = require('../app/models/user');
 
 // expose this function to our app using module.exports
-module.exports = function(passport) {
+module.exports = (passport) => {
 
-    passport.serializeUser(function(user, done) {
+    passport.serializeUser((user, done) => {
       done(null, user);
     });
   
-    passport.deserializeUser(function(user, done) {
+    passport.deserializeUser((user, done) => {
       done(null, user);
     });
   
       passport.use('local-login', new LocalStrategy(
-        function(username, password, done) {
+        (username, password, done) => {
           User.findOne({
             username: username.toLowerCase()
-          }, function(err, user) {
+          }, (err, user) => {
             // if there are any errors, return the error before anything else
              if (err)
                  return done(err);

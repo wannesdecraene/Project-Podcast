@@ -2,7 +2,7 @@
 
 var ObjectID = require('mongodb').ObjectID;
 
-module.exports = function (app, db) {
+module.exports = (app, db) => {
 
     //GET: All Podcasts
     app.get('/podcast/', (req, res) => {
